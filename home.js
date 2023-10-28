@@ -2,9 +2,74 @@ const hamburger = document.querySelector(".hamburger");
 const menu = document.querySelector(".menu")
 const logo = document.querySelector(".logo")
 const container = document.querySelector(".container")
+const screen=document.querySelector('.screen')
 const navLinks = document.querySelectorAll(".nav-links")
 let bgImg01 = document.querySelector(".bg-img01");
-  
+const carousel =document.querySelector('.carousel')
+const slides=document.querySelectorAll('.slides')
+let slidecounter=0
+let scrollposition=screen.scrollLeft;
+// function transform(slidecounter){\
+//     switch (slidecounter) {
+//         case 0:
+//             for(i in slides){
+//                 i.style.transform='translate(-900px)'
+//             }
+//             break;
+//         case 1:
+//             for(i in slides){
+//                 i.style.transform='translate(-900px)'
+//             }
+//             break;
+//         case 2:
+//             for(i in slides){
+//                 i.style.transform='translate(-900px)'
+//             }
+//             break;
+//         default:
+//             break;
+//     }
+// }
+
+// for(i in slides){
+//     console.log(i)
+// }
+// slides[0].style.transform='translateX(-800px)'
+console.log(slides)
+function slidechange() {
+    switch (slidecounter) {
+        case 0:
+            console.log(slidecounter)
+            console.log(scrollposition)
+            screen.scrollLeft=880
+            scrollposition=880
+            console.log(scrollposition)
+            slidecounter++
+            break;
+        case 1:
+            console.log(slidecounter)
+            console.log(scrollposition)
+            screen.scrollLeft=scrollposition+880
+            scrollposition=screen.scrollLeft
+            console.log(scrollposition)
+            slidecounter++
+            break;
+        case 2:
+            console.log(slidecounter)
+            // screen.classList.add('endless')
+            scrollposition=screen.scrollLeft
+            screen.scrollLeft=0
+            // screen.classList.remove('endless')
+            console.log(scrollposition)
+            slidecounter=0
+            scrollposition=0
+            break;
+        default:
+            break;
+    }
+}
+setInterval(slidechange, 4000);
+
 
 
 const bgImgSrc = [
