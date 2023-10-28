@@ -142,3 +142,40 @@
     color: white;
     font-size: larger;
 }
+.randomcard{
+    display: flex;
+    width:63%;
+    /* border: var(--border); */
+    gap: 15px;
+    padding: 10px 15px;
+    border-radius: 15px;
+    background-color: #f2ff0033;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 2px,rgba(0, 0, 0, 0.2) 0px -1px 3px ;
+    /* flex-wrap: wrap; */
+}
+.randomcardtextcontent{
+    padding-inline: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.randomcardimage{
+    border-radius: 15px;
+    height: 100%;
+    width: 50%;
+    min-width: 40%;
+}
+.randomcardimage img{
+    width: 100%;
+    height: 100%;
+    border-radius:15px ;
+}
+.randomcardbtn{
+    border: none;
+    color: white;
+    background-color: #423b7d;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+.randomcard h4{
+    font-weight: 600;
+}
