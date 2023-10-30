@@ -9,99 +9,46 @@ const carousel =document.querySelector('.carousel')
 const slides=document.querySelectorAll('.slides')
 let slidecounter=0
 let width=slides[0].offsetWidth
-console.log(width)
-let scrollposition=screen.scrollLeft;
-// function transform(slidecounter){\
-//     switch (slidecounter) {
-//         case 0:
-//             for(i in slides){
-//                 i.style.transform='translate(-900px)'
-//             }
-//             break;
-//         case 1:
-//             for(i in slides){
-//                 i.style.transform='translate(-900px)'
-//             }
-//             break;
-//         case 2:
-//             for(i in slides){
-//                 i.style.transform='translate(-900px)'
-//             }
-//             break;
-//         default:
-//             break;
-//     }
-// }
 
-// for(i in slides){
-//     console.log(i)
-// }
-// slides[0].style.transform='translateX(-800px)'
-console.log(slides)
+//Checking width and changing main pic
+const devicewidth=window.innerWidth
+console.log(devicewidth)
+if(devicewidth<485){
+    const any=document.querySelector('.main-img').style.display='none'
+    document.querySelector('.main-image').style.display='block'
+}
+
+
+
+
+
+let scrollposition=0
 function slidechange() {
     switch (slidecounter) {
         case 0:
-            console.log(slidecounter)
-            console.log(scrollposition)
+            // console.log(scrollposition)
             screen.scrollLeft=width
-            scrollposition=width
-            console.log(scrollposition)
             slidecounter++
             break;
         case 1:
-            console.log(slidecounter)
-            console.log(scrollposition)
-            screen.scrollLeft=scrollposition+width
             scrollposition=screen.scrollLeft
-            console.log(scrollposition)
+            // console.log(scrollposition)
+            screen.scrollLeft=scrollposition+width
             slidecounter++
             break;
         case 2:
-            console.log(slidecounter)
-            // screen.classList.add('endless')
+            scrollposition=screen.scrollLeft
+            console.log(scrollposition)
             scrollposition=screen.scrollLeft
             screen.scrollLeft=0
-            // screen.classList.remove('endless')
-            console.log(scrollposition)
             slidecounter=0
             scrollposition=0
+            // console.log(scrollposition)
             break;
         default:
             break;
     }
 }
-// function slidechange() {
-//     switch (slidecounter) {
-//         case 0:
-//             console.log(slidecounter)
-//             console.log(scrollposition)
-//             screen.scrollLeft=880
-//             scrollposition=880
-//             console.log(scrollposition)
-//             slidecounter++
-//             break;
-//         case 1:
-//             console.log(slidecounter)
-//             console.log(scrollposition)
-//             screen.scrollLeft=scrollposition+880
-//             scrollposition=screen.scrollLeft
-//             console.log(scrollposition)
-//             slidecounter++
-//             break;
-//         case 2:
-//             console.log(slidecounter)
-//             // screen.classList.add('endless')
-//             scrollposition=screen.scrollLeft
-//             screen.scrollLeft=0
-//             // screen.classList.remove('endless')
-//             console.log(scrollposition)
-//             slidecounter=0
-//             scrollposition=0
-//             break;
-//         default:
-//             break;
-//     }
-// }
 setInterval(slidechange, 4000);
 
 
@@ -123,6 +70,18 @@ let slideIndex = 0;
 showSlides();
 
 function showSlides() {
+    if(devicewidth<485){
+        let slides = document.querySelectorAll('.mobile-bg-img');
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = 'none';
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {
+            slideIndex = 1;
+        }
+        slides[slideIndex - 1].style.display = 'block';
+        setTimeout(showSlides, 10000);
+    }
     let slides = document.querySelectorAll('.bg-img');
     for (let i = 0; i < slides.length; i++) {
         slides[i].style.display = 'none';

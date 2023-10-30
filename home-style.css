@@ -135,11 +135,18 @@ nav a {
 
 .container01{
     width: 98.8vw;
-    height: 100vh;  
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+    overflow-y: hidden;
+}
+.mid{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    padding-bottom: 20px;
 }
 
 .col-md-4, .row{
@@ -342,55 +349,126 @@ nav a {
     }
 } */
 
+.main-image{
+    display: none;
+}
 
-
-@media (max-width:425px) {
-    container01{
+@media (max-width:480px) {
+    .main{
+        padding-top: 30px;
+        /* margin-bottom: 50px; */
+        width: 100%;
+        padding-bottom: 60px;
+    }
+    .main-image{
+        width: 100%;
+    }
+    .main-image img{
+        width: 100%;
+        height: 70%;
+    }
+    .container01{
         /* height: fit-content; */
+        /* height: 100% !important; */
+        gap: 20px;
+        /* padding-bottom: 50px; */
+        border: 2px solid red;
+        height: 100%;
+        padding-bottom: 10px;
+        overflow-y: visible;
     }
     *{
         padding: 0;
         margin: 0;
         overflow-x: hidden;
     }
-    .randomcardtextcontent{
-        padding: 0px !important;
-        width: 100% !important;
-        text-align: center;
+    .mid{
+        gap:20px
     }
-    .randomcard h4{
+    
+    .carousel{
+        min-height: 320px !important;
+    }
+    .screen{
         overflow-y: hidden;
+        min-height: 320px;
+        min-width: 70% !important;
+        max-width: 70%;
+        /* padding-left: 50px; */
+    }
+    .slides{
+        overflow-y: hidden;
+        /* justify-content: left; */
+        /* gap: 100px; */
+        min-height: 100% !important;
         padding-block: 5px;
-        font-size: 15px;
-        /* border: 2px solid black; */
-    }
-    .randomcard{
-        /* height: 400px; */
-        width: 100%;
+        gap: 5px  !important;
+        min-width: 100% !important;
         flex-direction: column;
-        align-items: center;
-        gap: 15px;
+        justify-content: flex-start;
+        
     }
-    .randomcardimage{
-        width: 100% !important;
-        height: 40% !important;
-        border: 2px solid black;
+    .slide-images{
+        margin-bottom: 0px !important;
+        /* border: 2px solid red; */
+        min-width: 100% !important;
+        height: 45% !important;
+        margin: 0px !important;
     }
-    .randomcardtextcontent p{
-        overflow-y: hidden;
-        color: rgba(17, 17, 17, 0.75);
+    .slide-text{
+        /* border: 4px solid purple; */
+        height: 55%;
+        /* max-height: 60%; */
+        display: flex;
+        flex-direction: column;
         /* border: 2px solid black; */
-        /* height: 100px !important; */
+        padding-bottom: 1px;
+    }
+    .slide-text h5{
+        display: none;
+    }
+    .slide-text h4{ 
+        height: 30%;
+        /* border: 1px solid red; */
+        /* border: 2px solid black; */
+        overflow-y: hidden;
+        padding: 0 !important;
         text-align: center;
-        font-size: 12px;
+        font-size: 12px !important;
+        /* min-height: 80px; */
+    }
+    
+    .slide-desc{
+        height: 55%;
+        /* border: 1px solid blue; */
+        /* border: 2px solid black; */
+        font-size: 10px;
+        height: auto;
+        overflow-y: hidden;
+        text-align: center;
+        padding: 0px;
+    }
+    .donate{
+        overflow-y: hidden;
+        margin-bottom: 10px;
+        /* border: 2px solid red; */
+        /* height: 18% !important; */
+        /* padding-bottom: 10px; */
+        width: 100% !important;
+        height: 15%;
+        text-align: center;
+        /* overflow-y: hidden; */
     }
     .container01-form{
+        min-height: 35px;
         overflow-y: hidden;
         width: 100%;
     }
     .searchbar{
         padding: 0 !important;
         width: 85%  !important;
+        height: 100%;
+        margin-top: 2px;
     }
     .searchbtn{
         width: 10% !important;
@@ -401,53 +479,39 @@ nav a {
         font-size: 10px !important;
         overflow-y:hidden ;
     }
-    .carousel{
-        height: auto !important;
-    }
-    .screen{
-        height: auto;
-        min-width: 70% !important;
-        max-width: 70%;
-        /* padding-left: 50px; */
-    }
-    .slides{
-        height: auto;
-        padding-block: 5px;
-        /* border: 2px solid blue; */
-        min-width: 100% !important;
+    .randomcard{
+        min-height: 300px;
+        width: 100%;
         flex-direction: column;
+        align-items: center;
+        gap: 15px;
     }
-    .slide-images{
-        /* border: 2px solid red; */
-        min-width: 100% !important;
-        height: 50% !important;
-    }
-    .slide-text h4{
-        text-align: center;
-        font-size: 12px !important;
-        overflow-y: hidden; 
-        /* border:2px solid blueviolet; */
-    }
-    .slide-text h5{
-        display: none;
-    }
-    .slide-desc{
-        font-size: 10px;
-        height: auto;
-        overflow-y: hidden;
-    }
-    .slide-text{
-        overflow-y: hidden;
-        height:max-content;
-        /* border: 2px solid purple; */
-        display: flex;
-        flex-direction: column;
-    }
-    .donate{
-        /* margin-left: 50%; */
+    .randomcardimage{
         width: 100% !important;
-        /* border: 2px solid red; */
+        height: 40% !important;
+        border: 2px solid black;
+    }
+    .randomcardtextcontent{
+        padding: 0px !important;
+        width: 100% !important;
         text-align: center;
+    }
+    .randomcard h4{
+        overflow-y: hidden;
+        padding-block: 5px;
+        font-size: 12px;
+        /* border: 2px solid black; */
+    }
+    .randomcardtextcontent p{
+        overflow-y: hidden;
+        color: rgba(17, 17, 17, 0.75);
+        /* border: 2px solid black; */
+        /* height: 100px !important; */
+        text-align: center;
+        font-size: 10px;
+    }
+    .randomcardtextcontent button{
+        font-size: 12px;
         overflow-y: hidden;
     }
 
