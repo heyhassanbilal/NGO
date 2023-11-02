@@ -23,6 +23,7 @@
 .logo img {
     height: 50px;
     float: left;
+    z-index: 99;
 }
 
 
@@ -280,7 +281,8 @@ nav a {
 
     .hamburger{
         display: inline-block;
-        float: right;
+        text-align: end;
+        /* float: right; */
     }
     
     .menu{
@@ -292,9 +294,16 @@ nav a {
         text-align: center;
         transition: 0.3s;
     }
-    
-    .ul1{
+    .ham_li{
         width: 100%;
+        align-items: end;
+    }
+    .ul1{
+        /* width: 100%; */
+        /* justify-content: end; */
+        /* align-items: end; */
+        height: 100%;
+        margin: 0;
     }
     
     .nav-links{
